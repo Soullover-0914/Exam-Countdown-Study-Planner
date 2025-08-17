@@ -1,0 +1,324 @@
+/* Custom CSS for the new Study Planner design */
+
+:root {
+    --primary-color: #f0f4f8; /* Soft light blue/gray */
+    --secondary-color: #ffffff; /* Clean white */
+    --accent-color-1: #3498db; /* Professional medium blue */
+    --accent-color-2: #27ae60; /* Calm green */
+    --text-color: #2c3e50; /* Dark charcoal/blue for main text */
+    --light-text-color: #7f8c8d; /* Muted gray for labels and subtext */
+    --border-color: #e0e6ed; /* Very light gray for borders */
+    --shadow-color: rgba(0, 0, 0, 0.08); /* Light shadow */
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--primary-color);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 2rem;
+    color: var(--text-color);
+}
+
+#app-container {
+    background-color: var(--secondary-color);
+    border-radius: 20px;
+    box-shadow: 0 15px 30px var(--shadow-color);
+    padding: 3rem;
+    width: 100%;
+    max-width: 1300px;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+@media (min-width: 1024px) {
+    #app-container {
+        flex-direction: row;
+        padding: 4rem;
+        gap: 5rem;
+    }
+}
+
+#left-pane, #right-pane {
+    width: 100%;
+}
+
+@media (min-width: 1024px) {
+    #left-pane {
+        flex: 1;
+    }
+    #right-pane {
+        flex: 1.5;
+    }
+}
+
+.main-title, .section-title {
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.main-title {
+    font-size: 2.5rem;
+}
+
+.section-title {
+    font-size: 1.75rem;
+}
+
+.main-title .fas, .section-title .fas {
+    color: var(--accent-color-1);
+}
+
+#form-section, #flowchart-section {
+    background-color: var(--secondary-color);
+    padding: 2.5rem;
+    border-radius: 15px;
+    border: 1px solid var(--border-color);
+    box-shadow: inset 0 2px 5px var(--shadow-color);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+label {
+    display: block;
+    font-weight: 500;
+    color: var(--light-text-color);
+    margin-bottom: 0.5rem;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background-color: var(--primary-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+input:focus, textarea:focus {
+    border-color: var(--accent-color-1);
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.5);
+    outline: none;
+}
+
+#time-inputs-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+@media (min-width: 640px) {
+    #time-inputs-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.input-with-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.input-with-label input {
+    width: 50%;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.btn {
+    font-weight: 600;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px var(--shadow-color);
+}
+
+.primary-btn {
+    background-color: var(--accent-color-2);
+    color: #ffffff;
+}
+
+.primary-btn:hover {
+    background-color: #229954;
+}
+
+.secondary-btn {
+    background-color: var(--border-color);
+    color: var(--text-color);
+}
+
+.secondary-btn:hover {
+    background-color: #d8e2ed;
+}
+
+#plans-section {
+    margin-top: 3rem;
+}
+
+#plans-section.hidden-section {
+    display: none;
+}
+
+#planList {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.plan-card {
+    background-color: var(--secondary-color);
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 5px 15px var(--shadow-color);
+    border-left: 6px solid var(--accent-color-2);
+}
+
+.plan-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.plan-card h3 {
+    font-weight: 600;
+    color: var(--text-color);
+    font-size: 1.25rem;
+}
+
+.action-buttons button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--light-text-color);
+    font-size: 1.25rem;
+    transition: color 0.2s ease;
+}
+
+.action-buttons button:hover {
+    color: var(--accent-color-1);
+}
+
+.delete-btn:hover {
+    color: #e74c3c !important;
+}
+
+#flowchartArea {
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    border-radius: 15px;
+    background-color: var(--primary-color);
+    border: 1px solid var(--border-color);
+    box-shadow: inset 0 2px 5px var(--shadow-color);
+}
+
+#flowchartPlaceholder {
+    color: var(--light-text-color);
+    text-align: center;
+}
+
+#flowchartArea.has-content {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+/* Flowchart node styles */
+.flowchart-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 3rem;
+}
+
+.flowchart-node {
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px var(--shadow-color);
+    font-weight: 600;
+    text-align: center;
+    max-width: 350px;
+    position: relative;
+}
+
+/* Style for the start and end nodes */
+.start-node, .end-node {
+    background-color: var(--accent-color-1);
+    color: var(--secondary-color);
+    font-weight: bold;
+    font-size: 1.25rem;
+    padding: 1rem 2rem;
+    border-radius: 50px; /* Make them pill-shaped */
+    text-transform: uppercase;
+}
+
+.exam-node {
+    background-color: var(--accent-color-1);
+    color: var(--secondary-color);
+}
+
+.exam-node-info {
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+    color: var(--secondary-color);
+}
+
+.timing-info {
+    font-size: 0.75rem;
+    color: var(--light-text-color);
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 0.25rem 0.5rem;
+    border-radius: 8px;
+    margin-top: 0.75rem;
+    display: inline-block;
+}
+
+.topics-container, .subtopics-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.topic-node {
+    background-color: var(--light-text-color);
+    color: var(--secondary-color);
+}
+
+.subtopic-node {
+    background-color: var(--border-color);
+    color: var(--text-color);
+}
+
+/* Style for the new section headings */
+.section-heading {
+    color: var(--text-color);
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid var(--accent-color-1);
+    padding-bottom: 0.5rem;
+}

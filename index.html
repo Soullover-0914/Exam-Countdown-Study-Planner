@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Study Hub</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app-container">
+        <!-- Left Pane: Form and Previous Plans -->
+        <div id="left-pane">
+            <h1 class="main-title"><i class="fas fa-calendar-alt"></i> Personal Study Hub</h1>
+            <section id="form-section">
+                <h2 class="section-title"><i class="fas fa-edit"></i> Create Your Study Plan</h2>
+                <form id="studyPlanForm">
+                    <div class="form-group">
+                        <label for="examName">Exam Name</label>
+                        <input type="text" id="examName" placeholder="e.g., Final Exam, History Midterm" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="examDate">Exam Date</label>
+                        <input type="date" id="examDate" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="studyTopics">Study Topics (comma-separated)</label>
+                        <input type="text" id="studyTopics" placeholder="e.g., Algebra, Geometry, Calculus" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subTopics">Sub-topics (comma-separated)</label>
+                        <textarea id="subTopics" placeholder="e.g., Linear Equations, Quadratic Formula"></textarea>
+                    </div>
+                    <div id="time-inputs-grid">
+                        <div class="time-input-group">
+                            <label for="timePerTopicHours">Time Per Topic</label>
+                            <div class="input-with-label">
+                                <input type="number" id="timePerTopicHours" placeholder="Hours">
+                                <span>h</span>
+                                <input type="number" id="timePerTopicMinutes" placeholder="Minutes">
+                                <span>m</span>
+                            </div>
+                        </div>
+                        <div class="time-input-group">
+                            <label for="timePerSubTopicHours">Time Per Sub-topic</label>
+                            <div class="input-with-label">
+                                <input type="number" id="timePerSubTopicHours" placeholder="Hours">
+                                <span>h</span>
+                                <input type="number" id="timePerSubTopicMinutes" placeholder="Minutes">
+                                <span>m</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="button-container">
+                        <button type="submit" id="addExamBtn" class="btn primary-btn">Add Exam</button>
+                        <button type="button" id="showPreviousBtn" class="btn secondary-btn">Show Previous Plans</button>
+                    </div>
+                </form>
+            </section>
+            <section id="plans-section" class="hidden-section">
+                <h2 class="section-title"><i class="fas fa-list-ul"></i> Previous Study Plans</h2>
+                <div id="planList">
+                    <!-- Previous plans will be loaded here -->
+                </div>
+            </section>
+        </div>
+
+        <!-- Right Pane: Flowchart -->
+        <div id="right-pane">
+            <section id="flowchart-section">
+                <h2 class="section-title"><i class="fas fa-sitemap"></i> Study Plan Flowchart</h2>
+                <div id="flowchartArea">
+                    <p id="flowchartPlaceholder">Your study plan flowchart will appear here.</p>
+                </div>
+            </section>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
